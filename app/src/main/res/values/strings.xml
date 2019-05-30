@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SimpleMp3</string>
+    <string name="label_song_name">Song Name</string>
+    <string name="label_artist_name">Artist Name</string>
+    <string name="title_activity_playlist">PlaylistActivity</string>
+    <string name="label_zero_time">00:00</string>
 </resources>

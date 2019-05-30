@@ -5,6 +5,74 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/dp_8"
         tools:context=".ui.activity.MainActivity">
-
+    <TextView
+            android:id="@+id/textSongName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/label_song_name"
+            android:textSize="@dimen/text_large_size"
+            android:textStyle="bold"/>
+    <TextView
+            android:id="@+id/textArtistName"
+            android:text="@string/label_artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/textSongName"
+            app:layout_constraintTop_toBottomOf="@id/textSongName"
+            android:layout_marginTop="@dimen/dp_8"/>
+    <ImageView
+            android:id="@+id/imageLoop"
+            android:layout_width="@dimen/size_icon_normal"
+            android:layout_height="@dimen/size_icon_normal"
+            app:srcCompat="@drawable/ic_sync_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imagePlayPause"
+            app:layout_constraintBottom_toBottomOf="@id/imagePlayPause"
+            app:layout_constraintEnd_toStartOf="@id/imagePlayPause"/>
+    <ImageView
+            android:id="@+id/imagePlayPause"
+            android:layout_width="@dimen/size_icon_large"
+            android:layout_height="@dimen/size_icon_large"
+            app:srcCompat="@drawable/ic_play_circle_outline_black_24dp"
+            app:layout_constraintStart_toEndOf="@id/imageLoop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageReset"/>
+    <ImageView
+            android:id="@+id/imageReset"
+            android:layout_width="@dimen/size_icon_normal"
+            android:layout_height="@dimen/size_icon_normal"
+            app:srcCompat="@drawable/ic_replay_black_24dp"
+            app:layout_constraintStart_toEndOf="@id/imagePlayPause"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imagePlayPause"
+            app:layout_constraintBottom_toBottomOf="@id/imagePlayPause"/>
+    <SeekBar
+            android:id="@+id/barCurrentPosition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:max="100"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/imagePlayPause"/>
+    <TextView
+            android:id="@+id/textCurrentTimer"
+            android:text="@string/label_zero_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_8"
+            app:layout_constraintStart_toStartOf="@id/barCurrentPosition"
+            app:layout_constraintBottom_toTopOf="@id/barCurrentPosition"/>
+    <TextView
+            android:id="@+id/textTotalTimer"
+            android:text="@string/label_zero_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_8"
+            app:layout_constraintEnd_toEndOf="@id/barCurrentPosition"
+            app:layout_constraintBottom_toTopOf="@id/barCurrentPosition"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
